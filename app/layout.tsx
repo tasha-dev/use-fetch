@@ -21,6 +21,27 @@ export const metadata: Metadata = {
   title: "useFetch - Error, Loading and data usage",
   description:
     "Completly free and easy to use component and hook for loading state, handling errors and showing the data in next.js app.",
+  // metadataBase: new URL("https://brainmark.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "useFetch",
+    description:
+      "Completly free and easy to use component and hook for loading state, handling errors and showing the data in next.js app.",
+    // url: "https://brainmark.vercel.app",
+    siteName: "useFetch",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 // Creating and exporting RootLayout component as default
