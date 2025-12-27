@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import "@/style/globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { cn } from "@/lib/util";
 
 // Defining font
 const jetbrainsMonoFont = JetBrains_Mono({
@@ -28,7 +29,14 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html suppressHydrationWarning lang="en">
       <ThemeProvider>
-        <body>{children}</body>
+        <body
+          className={cn(
+            "min-h-dvh w-dvw overflow-x-hidden overflow-y-auto bg-background text-foreground",
+            jetbrainsMonoFont.className,
+          )}
+        >
+          {children}
+        </body>
       </ThemeProvider>
     </html>
   );
