@@ -6,3 +6,12 @@ import { ReactNode } from "react";
 export interface RootLayoutProps {
   children: ReactNode;
 }
+
+export interface ContainerProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export interface HeaderProps {
+  className?: string;
+}
