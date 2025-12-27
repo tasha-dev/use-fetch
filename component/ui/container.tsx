@@ -18,7 +18,7 @@ export default function Container({
       <div className={cn("min-h-dvh mx-auto max-w-3xl p-4", className)}>
         {children}
       </div>
-      <Footer />
+      <Footer className="mt-10" />
     </>
   );
 }

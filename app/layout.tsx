@@ -5,8 +5,7 @@ import { JSX } from "react";
 import type { Metadata } from "next";
 import "@/style/globals.css";
 import { JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { cn } from "@/lib/util";
+import RootLayoutContent from "@/component/rootLayoutContent";
 
 // Defining font
 const jetbrainsMonoFont = JetBrains_Mono({
@@ -49,16 +48,9 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   // Returning JSX
   return (
     <html suppressHydrationWarning lang="en">
-      <ThemeProvider>
-        <body
-          className={cn(
-            "min-h-dvh w-dvw overflow-x-hidden overflow-y-auto bg-background text-foreground",
-            jetbrainsMonoFont.className,
-          )}
-        >
-          {children}
-        </body>
-      </ThemeProvider>
+      <RootLayoutContent fontClassName={jetbrainsMonoFont.className}>
+        {children}
+      </RootLayoutContent>
     </html>
   );
 }
