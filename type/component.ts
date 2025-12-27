@@ -15,3 +15,7 @@ export interface ContainerProps {
 export interface HeaderProps {
   className?: string;
 }
+
+export interface FooterProps {
+  className?: string;
+}
