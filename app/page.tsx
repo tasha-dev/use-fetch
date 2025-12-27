@@ -24,6 +24,7 @@ export default function HomePage(): JSX.Element {
       </p>
       <FetchRenderer<GETPostType[]>
         url="/posts"
+        queryKey={["posts"]}
         loading={
           <div className="grid lg:grid-cols-2 gap-6">
             {[...new Array(10)].map((_, index) => (

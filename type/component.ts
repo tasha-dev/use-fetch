@@ -21,11 +21,15 @@ export interface FooterProps {
   className?: string;
 }
 
-export interface FetchRendererProps<T> {
+export interface FetchRendererProps<TData> {
   url: string;
   loading?: ReactNode;
   error?: ReactNode;
-  render: (data: T, refetch: () => void) => ReactNode;
+  queryKey: string[];
+  render: (data: TData, refetch: () => void) => ReactNode;
+  enabled?: boolean;
+  staleTime?: number;
+  refetchInterval?: number;
 }
 
 export interface RootLayoutContentProps {

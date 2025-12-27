@@ -16,15 +16,22 @@ export default function FetchRenderer<T>({
   error,
   loading,
   render,
+  queryKey,
+  enabled,
+  refetchInterval,
+  staleTime,
 }: FetchRendererProps<T>): ReactNode {
   // Defining hooks
   const fetchData = useApiQuery<T>({
     url: url,
-    queryKey: ["posts"],
+    queryKey,
+    staleTime,
+    enabled,
+    refetchInterval,
   });
 
   // Conditional rendering
-  if (fetchData.isLoading || fetchData.isRefetching) {
+  if (fetchData.isLoading) {
     if (!loading) {
       return <Skeleton className="w-full h-[200px] rounded-lg" />;
     } else {
@@ -55,5 +62,16 @@ export default function FetchRenderer<T>({
     }
   } else if (!fetchData.isLoading && !fetchData.isError && fetchData.data) {
     return render(fetchData.data, fetchData.refetch);
+  } else {
+    return (
+      <Alert variant={"destructive"}>
+        <AlertTriangle />
+        <AlertTitle>Something went wrong</AlertTitle>
+        <AlertDescription className="inline">
+          an unexpected error occurred while fetching <code>{url}</code>. please
+          try again in a moment or refresh the page.
+        </AlertDescription>
+      </Alert>
+    );
   }
 }
