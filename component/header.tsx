@@ -41,12 +41,12 @@ export default function Header({ className }: HeaderProps): JSX.Element {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button asChild variant={"outline"} size={"icon-lg"}>
-                <Link href="https://tasha.vercel.app/">
+                <Link href="https://github.com/tasha-dev/use-fetch">
                   <Code />
                 </Link>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Mahdi Tasha</TooltipContent>
+            <TooltipContent>See the code</TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
