@@ -8,6 +8,7 @@ import { RootLayoutContentProps } from "@/type/component";
 import { JSX } from "react";
 import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "./ui/sonner";
 
 // defining query client for react query
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ export default function RootLayoutContent({
             fontClassName,
           )}
         >
+          <Toaster position="bottom-center" />
           {children}
         </body>
       </ThemeProvider>

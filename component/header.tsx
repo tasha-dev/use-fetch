@@ -23,7 +23,7 @@ export default function Header({ className }: HeaderProps): JSX.Element {
   return (
     <header
       className={cn(
-        "bg-foreground/5 backdrop-blur-2xl sticky top-0 left-0 border-b border-b-foreground/10 w-full",
+        "bg-foreground/5 backdrop-blur-2xl sticky top-0 left-0 border-b border-b-foreground/10 w-full z-50",
         className,
       )}
     >

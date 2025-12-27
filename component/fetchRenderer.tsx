@@ -36,11 +36,18 @@ export default function FetchRenderer<T>({
         <Alert variant={"destructive"}>
           <AlertTriangle />
           <AlertTitle>Something went wrong</AlertTitle>
-          <AlertDescription className="inline">
-            An unexpected error of <code>{fetchData.error.status}</code>{" "}
-            occurred while fetching <code>{url}</code>. Please try again in a
-            moment or refresh the page.
-          </AlertDescription>
+          {fetchData.error.status ? (
+            <AlertDescription className="inline">
+              An unexpected error of <code>{fetchData.error.status}</code>
+              occurred while fetching <code>{url}</code>. Please try again in a
+              moment or refresh the page.
+            </AlertDescription>
+          ) : (
+            <AlertDescription className="inline">
+              An unexpected error occurred while fetching <code>{url}</code>.
+              Please try again in a moment or refresh the page.
+            </AlertDescription>
+          )}
         </Alert>
       );
     } else {
